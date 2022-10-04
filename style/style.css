@@ -1,0 +1,559 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "AmaticSC-Regular";
+  font-display: swap;
+  src: url("../fonts/AmaticSC-Regular.woff2") format("woff2"), url("../fonts/AmaticSC-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto-Thin";
+  font-display: swap;
+  src: url("../fonts/Roboto-Thin.woff2") format("woff2"), url("../fonts/Roboto-Thin.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Обнуление */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  line-height: 1;
+  font-size: 16px;
+  background-color: #000000;
+  color: #fff;
+  font-family: "Roboto-Thin", sans-serif;
+}
+
+/* --------------------- */
+.wrapper {
+  min-height: 100%;
+}
+
+._container {
+  max-width: 1800px;
+  margin: 0px auto;
+  padding: 50px 20px;
+}
+
+.parallax {
+  min-height: 100vh;
+}
+
+.parallax__body {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.parallax__container {
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+
+.parallax__label {
+  color: #c184fb;
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 6px;
+  margin: 0px 0px 15px 0px;
+  align-items: center;
+}
+
+.parallax__label::before {
+  content: "";
+  flex: 0 0 117px;
+  margin: 0px 30px 0px 3px;
+  background-color: #c184fb;
+  height: 1px;
+}
+
+.parallax__title {
+  font-size: 78px;
+  font-family: "AmaticSC-Regular", cursive;
+  text-shadow: 2px 2px 4px black;
+}
+
+.parallax__images {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
+  z-index: 1;
+}
+
+.images-parallax__item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.images-parallax__city,
+.images-parallax__girl {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+
+.images-parallax__city {
+  background: url("../img/city.jpg") center/cover no-repeat;
+  top: 0%;
+  z-index: 2;
+}
+
+.images-parallax__girl {
+  background: url("../img/girl.png") center/cover no-repeat;
+  top: -7%;
+  z-index: 3;
+}
+
+.content {
+  background-color: black;
+  position: relative;
+  z-index: 2;
+}
+
+.content::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  transform: translate(0px, -100%);
+  background: linear-gradient(180deg, rgba(11, 29, 38, 0) 65%, black 100%);
+}
+
+.content__container {
+  padding: 15px 20px;
+}
+
+.portfolio {
+  background: url("../img/cards-background.jpg");
+  overflow: hidden;
+  border-radius: 10px;
+  animation: neon 20s ease-in-out running 2s infinite;
+  box-shadow: 0 0 1.5px #fff, 0 0 2px #fff, 0 0 2.5px #fff, 0 0 3px #0fa, 0 0 3.5px #0fa, 0 0 4px #0fa, 0 0 4.5px #0fa, 0 0 5px #0fa;
+}
+
+@keyframes neon {
+  0% {
+    box-shadow: 0 0 1.5px #fff, 0 0 2px #fff, 0 0 2.5px #fff, 0 0 3px #0fa, 0 0 3.5px #0fa, 0 0 4px #0fa, 0 0 4.5px #0fa, 0 0 5px #0fa;
+  }
+  20% {
+    box-shadow: 0 0 3.5px #fff, 0 0 4px #fff, 0 0 4.5px #fff, 0 0 5px #00ff73, 0 0 5.5px #00ff73, 0 0 6px #00ff73, 0 0 6.5px #00ff73, 0 0 7px #00ff73;
+  }
+  40% {
+    box-shadow: 0 0 5.5px #fff, 0 0 6px #fff, 0 0 6.5px #fff, 0 0 7px #9900ff, 0 0 7.5px #9900ff, 0 0 8px #9900ff, 0 0 8.5px #9900ff, 0 0 9px #9900ff;
+  }
+  60% {
+    box-shadow: 0 0 5.5px #fff, 0 0 6px #fff, 0 0 6.5px #fff, 0 0 7px #bc13fe, 0 0 7.5px #bc13fe, 0 0 8px #bc13fe, 0 0 8.5px #9900ff, 0 0 10px #9900ff;
+  }
+  80% {
+    box-shadow: 0 0 3.5px #fff, 0 0 4px #fff, 0 0 4.5px #fff, 0 0 5px #0062FF, 0 0 5.5px #0062FF, 0 0 6px #0062FF, 0 0 6.5px #0062FF, 0 0 7px #0062FF;
+  }
+  100% {
+    box-shadow: 0 0 1.5px #fff, 0 0 2px #fff, 0 0 2.5px #fff, 0 0 3px #0fa, 0 0 3.5px #0fa, 0 0 4px #0fa, 0 0 4.5px #0fa, 0 0 5px #0fa;
+  }
+}
+
+.portfolio__container {
+  min-height: 80vh;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.card {
+  width: 320px;
+  height: 460px;
+  cursor: pointer;
+  margin: 10px;
+  transform: translate(0%, 10%);
+}
+
+.card:hover .front {
+  transform: perspective(1000px) rotateY(-180deg);
+}
+
+.card:hover .back {
+  transform: perspective(1000px) rotateY(0deg);
+}
+
+.cs-go {
+  width: 320px;
+  cursor: pointer;
+  transform: translate(0%, -100%);
+  transition: all 0.3s ease;
+}
+
+@keyframes cs-go {
+  0% {
+    transform: translate(0%, -100%);
+  }
+  100% {
+    transform: translate(0%, 0.9%);
+  }
+}
+
+@keyframes cs-go-reverse {
+  0% {
+    transform: translate(0%, 0.9%);
+  }
+  100% {
+    transform: translate(0%, -100%);
+  }
+}
+
+.qbis {
+  width: 320px;
+  cursor: pointer;
+  transform: translate(0%, -100%);
+  transition: all 0.3s ease;
+}
+
+@keyframes qbis {
+  0% {
+    transform: translate(0%, -100%);
+  }
+  100% {
+    transform: translate(0%, -2.5%);
+  }
+}
+
+@keyframes qbis-reverse {
+  0% {
+    transform: translate(0%, -2.5%);
+  }
+  100% {
+    transform: translate(0%, -100%);
+  }
+}
+
+.christmas-market {
+  width: 320px;
+  cursor: pointer;
+  transform: translate(0%, -100%);
+  transition: all 0.3s ease;
+}
+
+@keyframes christmas-market {
+  0% {
+    transform: translate(0%, -100%);
+  }
+  100% {
+    transform: translate(0%, -6%);
+  }
+}
+
+@keyframes christmas-market-reverse {
+  0% {
+    transform: translate(0%, -6%);
+  }
+  100% {
+    transform: translate(0%, -100%);
+  }
+}
+
+.card-center {
+  width: 320px;
+  height: 460px;
+  cursor: pointer;
+  margin: 10px;
+  transform: translate(0%, -15%);
+}
+
+.card-center:hover .front {
+  transform: perspective(600px) rotateY(-180deg);
+}
+
+.card-center:hover .back {
+  transform: perspective(600px) rotateY(0);
+}
+
+.image {
+  transform: translate(0%, -16%);
+}
+
+.front,
+.back {
+  background-image: url("../img/wall.jpg");
+  background-position: center left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  backface-visibility: hidden;
+  /* For Safari: -webkit-backface-visibility: hidden; */
+  transition: transform 0.5s ease;
+  border-radius: 10px;
+}
+
+.front {
+  transform: perspective(600px) rotateY(0);
+}
+
+.front img {
+  width: 100%;
+  height: auto;
+}
+
+.front .christmas-market-card {
+  width: 100.5%;
+}
+
+.back {
+  transform: perspective(600px) rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+  background: none;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #bc13fe;
+  border: 1px solid black;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: white;
+  cursor: n-resize;
+}
+
+body::-webkit-scrollbar-thumb:active {
+  background: gray;
+}
+
+@media screen and (max-width: 1122px) {
+  .portfolio__container {
+    justify-content: center;
+    gap: 20px;
+    min-height: 60vh;
+    height: 90%;
+  }
+  .card {
+    transform: translate(0%, 0%);
+    width: 240px;
+    height: 350px;
+  }
+  .cs-go {
+    width: 240px;
+    height: 357px;
+  }
+  .qbis {
+    width: 240px;
+    height: 367px;
+  }
+  .christmas-market {
+    width: 240px;
+    height: 400px;
+  }
+  .card-center {
+    transform: translate(0%, 0%);
+    width: 240px;
+    height: 350px;
+    margin: 5px;
+  }
+  .front .christmas-market-card {
+    width: 103%;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .card {
+    width: 210px;
+    height: 310px;
+    overflow: hidden;
+  }
+  .cs-go {
+    width: 210px;
+    height: 316px;
+  }
+  .qbis {
+    width: 210px;
+    height: 330px;
+  }
+  .christmas-market {
+    width: 210px;
+    height: 365px;
+  }
+  .card-center {
+    width: 210px;
+    height: 310px;
+    overflow: hidden;
+  }
+  .front .christmas-market-card {
+    width: 210px;
+    height: 330px;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .portfolio__container {
+    gap: 10px;
+    min-height: 60vh;
+    height: 80%;
+  }
+  .card {
+    width: 180px;
+    height: 260px;
+    margin: 5px;
+  }
+  .cs-go {
+    width: 180px;
+    height: 267px;
+  }
+  .qbis {
+    width: 180px;
+    height: 275px;
+  }
+  .christmas-market {
+    width: 180px;
+    height: 295px;
+  }
+  .card-center {
+    width: 180px;
+    height: 260px;
+  }
+  .front .christmas-market-card {
+    width: 180px;
+    height: 270px;
+  }
+}
+
+@media (max-width: 767px) {
+  .parallax__title {
+    font-size: 50px;
+  }
+  .parallax__label {
+    font-size: 16px;
+    margin: 0px 0px 15px 0px;
+    text-shadow: 2px 2px 2px black;
+  }
+  .parallax__label::before {
+    flex: 0 0 20px;
+    margin: 0px 10px 0px 3px;
+  }
+}
+
+@media screen and (max-width: 429px) {
+  .card {
+    width: 210px;
+    height: 310px;
+  }
+  .cs-go {
+    width: 210px;
+    height: 316px;
+  }
+  .qbis {
+    width: 210px;
+    height: 330px;
+  }
+  .christmas-market {
+    width: 210px;
+    height: 365px;
+  }
+  .card-center {
+    width: 210px;
+    height: 310px;
+  }
+  .front .christmas-market-card {
+    width: 210px;
+    height: 330px;
+  }
+}
+
+@media (max-width: 380px) {
+  .front .christmas-market-card {
+    width: 103%;
+  }
+  .parallax__title {
+    font-size: 42px;
+  }
+  .parallax__label {
+    font-size: 14px;
+    margin: 0px 0px 10px 0px;
+  }
+  .parallax__label::before {
+    flex: 0 0 20px;
+    margin: 0px 10px 0px 3px;
+  }
+}
+
+@media (max-width: 315px) {
+  .parallax__title {
+    font-size: 42px;
+  }
+  .parallax__label {
+    font-size: 11px;
+    margin: 0px 0px 10px 0px;
+  }
+  .parallax__label::before {
+    flex: 0 0 20px;
+    margin: 0px 10px 0px 3px;
+  }
+}
+
+@media (max-aspect-ratio: 3 / 2) {
+  .images-parallax__girl {
+    background-position: 43% top;
+  }
+  .images-parallax__city {
+    background-position: 43% top;
+  }
+}
+/*# sourceMappingURL=style.css.map */

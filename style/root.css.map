@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,aAAa;AAMb,sBAAsB",
+    "sources": [
+        "../christmasmarket/scss/root.scss"
+    ],
+    "names": [],
+    "file": "root.css"
+}
